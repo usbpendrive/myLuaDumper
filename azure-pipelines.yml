@@ -31,13 +31,3 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-- task: GitHubRelease@1
-  inputs:
-    gitHubConnection: UsbPendriveGithub
-    repositoryName: '$(Build.Repository.Name)'
-    action: 'create'
-    target: '$(Build.SourceVersion)'
-    tagSource: 'gitTag'
-    tagPattern: 'release-v[0-9]*\S*'
-    changeLogCompareToRelease: 'lastFullRelease'
-    changeLogType: 'commitBased'
